@@ -1,7 +1,6 @@
 const emailInput = document.getElementById('email-input');
 const submitButton = document.getElementById('submit-button');
 const errorMessage = document.getElementById('error-message');
-const dismiss = document.getElementById('dismiss');
 
 emailInput.addEventListener('input', function () {
     if (emailInput.checkValidity()) {
@@ -23,10 +22,15 @@ emailInput.addEventListener('input', function () {
     }
 });
 
-submitButton.addEventListener('click', function () {
-    if (emailInput.checkValidity()) {
-        window.location.href = 'subscribing.html';
-    } else {
+submitButton.addEventListener('click', function (event) {
+    if (!emailInput.checkValidity()) {
+        event.preventDefault();
         submitButton.disabled = true;
-    }
+    } 
 });
+
+function saveAddress() {
+    const correo = emailInput.value;
+    const url = 'subscribing.html?correo=' + encodeURIComponent(correo);
+    window.location.href = url;
+};

@@ -121,14 +121,6 @@ input {
     width: 300px;
 }
 
-.prueba {
-    text-align: left;
-}
-
-.prueba img {
-    float: left;
-}
-
 @font-face {
     font-family: 'Roboto1';
     src: url('/assets/fonts/Roboto-Bold.ttf') format('truetype');
@@ -165,5 +157,25 @@ input {
     .title {
         font-size: 30px;
         font-family: 'Roboto1';
+    }
+
+    .container-sub {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .message-sub {
+        height: auto;
+        border-radius: 0%;
+    }
+
+    .button-dismiss {
+        margin-top: 285px; 
+    }
+
+    .prueba {
+        margin-top: 54px;
     }
 }
